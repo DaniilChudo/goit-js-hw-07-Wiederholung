@@ -1,3 +1,4 @@
+const gallery = document.querySelector(".gallery");
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -22,5 +23,13 @@ const images = [
   {
     url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
     alt: "Lighthouse Coast Sea",
-  }
+  },
 ];
+
+const addGallery = images
+  .map((img) => {
+    return `<li><img src="${img.url}" alt="${img.alt}"/></li>`;
+  })
+  .join("");
+
+gallery.insertAdjacentHTML("afterbegin", addGallery);
